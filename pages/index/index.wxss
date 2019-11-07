@@ -1,0 +1,18 @@
+/**index.wxss**/
+/* .zz-container-scroll-view {
+  margin-bottom: 120rpx;
+}
+.zz-container-tabbar {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+.zz-container-tabbar_item {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background: #fff;
+  height: 120rpx;
+  color: #000;
+} */

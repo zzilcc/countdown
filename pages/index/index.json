@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "component_home": "/pages/components/home/home",
+    "component_mine": "/pages/components/mine/mine"
+  }
+}
