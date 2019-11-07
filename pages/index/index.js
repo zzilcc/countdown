@@ -22,7 +22,7 @@ Page({
         "selectedIconPath": ""
       }
     ],
-    currentTabIndex: 0
+    currentTab: 0
   },
   //事件处理函数
   bindViewTap: function() {

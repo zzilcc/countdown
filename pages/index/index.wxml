@@ -18,4 +18,10 @@
       <component_mine/>
     </view>
   </scroll-view>
+  <view class="nav-tabs">
+    <view class="tab-list {{currentTab == idx ? 'active' : 'default' }}" wx:for="{{tarbarItems}}" wx:key="key" wx:for-index="idx" wx:for-item="item"  bindtap="">
+      <text class="{{currentTab == idx ? 'tab-text-selected' : 'tab-text'}}" wx:for-index="idx" data-current="{{idx}}">{{item.text}}</text>
+      <image class="iconPath" wx:for-index="idx"  src="{{currentTab == idx ? item.selectedIconPath : item.iconPath }}"></image>
+    </view>
+  </view>
 </view>
