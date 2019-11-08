@@ -12,23 +12,28 @@ Page({
       {
         "key": "home",
         "text": "首页",
-        "iconPath": "",
-        "selectedIconPath": ""
+        "iconPath": "../../assets/icons/home.png",
+        "selectedIconPath": "../../assets/icons/home_active.png"
       },
       {
         "key": "mine",
         "text": "我的",
-        "iconPath": "",
-        "selectedIconPath": ""
+        "iconPath": "../../assets/icons/mine.png",
+        "selectedIconPath": "../../assets/icons/mine_active.png"
       }
     ],
     currentTab: 0
   },
   //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
+  tabbarChange: function(e) {
+    let that = this
+    if (this.data.currentTab === e.target.dataset.current) {
+      return false
+    } else {
+      that.setData({
+        currentTab: e.target.dataset.current
+      })
+    }
   },
   onLoad: function () {
     if (app.globalData.userInfo) {

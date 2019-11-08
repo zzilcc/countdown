@@ -10,18 +10,18 @@
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view> -->
-  <scroll-view>
-    <view hidden="" class="">
-      <component_home/>
+  <scroll-view class="zz-container-scroll-view">
+    <view hidden="{{currentTab === 1}}" class="">
+      <component_home />
     </view>
-    <view hidden="" class="">
-      <component_mine/>
+    <view hidden="{{currentTab === 0}}" class="">
+      <component_mine />
     </view>
   </scroll-view>
-  <view class="nav-tabs">
-    <view class="tab-list {{currentTab == idx ? 'active' : 'default' }}" wx:for="{{tarbarItems}}" wx:key="key" wx:for-index="idx" wx:for-item="item"  bindtap="">
-      <text class="{{currentTab == idx ? 'tab-text-selected' : 'tab-text'}}" wx:for-index="idx" data-current="{{idx}}">{{item.text}}</text>
-      <image class="iconPath" wx:for-index="idx"  src="{{currentTab == idx ? item.selectedIconPath : item.iconPath }}"></image>
+  <view class="zz-container-tabbar">
+    <view class="zz-container-tabbar_item {{currentTab == idx ? 'active' : 'default' }}" data-current="{{idx}}" wx:for="{{tarbarItems}}" wx:key="key" wx:for-index="idx" wx:for-item="item"  bindtap="tabbarChange">
+      <text data-current="{{idx}}" class="{{currentTab == idx ? 'zz-container-tabbar_item--text-active' : 'zz-container-tabbar_item--text'}}" wx:for-index="idx" data-current="{{idx}}">{{item.text}}</text>
+      <image data-current="{{idx}}" class="iconPath" wx:for-index="idx"  src="{{currentTab == idx ? item.selectedIconPath : item.iconPath }}"></image>
     </view>
   </view>
 </view>
