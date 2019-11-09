@@ -1,1 +1,20 @@
 /* pages/components/home/home.wxss */
+button {
+  border-radius: 50rpx;
+  background: linear-gradient(270deg, #3494E6 0%, #EC6EAD 100%);
+  color: #fff;
+}
+.zz-home {
+  border: 1px solid #3494E6;
+  position: relative;
+}
+.zz-home-main {
+
+}
+.zz-home-add {
+  /* height: 230rpx;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0; */
+}

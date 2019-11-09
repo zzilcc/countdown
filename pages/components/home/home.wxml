@@ -1,2 +1,8 @@
 <!--pages/components/home/home.wxml-->
-
+<view calss="zz-home">
+  <view class="zz-home-main">
+  </view>
+  <view class="zz-home-add">
+    <button size="mini" bindtap="default" hover-class="other-button-hover">+ 添加</button>
+  </view>
+</view>

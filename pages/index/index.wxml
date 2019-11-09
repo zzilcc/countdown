@@ -1,27 +1,21 @@
 <!--index.wxml-->
 <view class="container">
-  <!-- <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view> -->
-  <scroll-view class="zz-container-scroll-view">
-    <view hidden="{{currentTab === 1}}" class="">
-      <component_home />
-    </view>
-    <view hidden="{{currentTab === 0}}" class="">
-      <component_mine />
-    </view>
-  </scroll-view>
-  <view class="zz-container-tabbar">
-    <view class="zz-container-tabbar_item {{currentTab == idx ? 'active' : 'default' }}" data-current="{{idx}}" wx:for="{{tarbarItems}}" wx:key="key" wx:for-index="idx" wx:for-item="item"  bindtap="tabbarChange">
-      <text data-current="{{idx}}" class="{{currentTab == idx ? 'zz-container-tabbar_item--text-active' : 'zz-container-tabbar_item--text'}}" wx:for-index="idx" data-current="{{idx}}">{{item.text}}</text>
-      <image data-current="{{idx}}" class="iconPath" wx:for-index="idx"  src="{{currentTab == idx ? item.selectedIconPath : item.iconPath }}"></image>
+    <canvas wx:if="{{isCanvasShow === 0}}" style="width: 100%; height: 100%;position:absolute;top:0px;left:0px;" canvas-id="enteryCanvas" bindtouchstart="bindtouchstart" bindtouchmove="bindtouchmove"  bindtouchend="bindtouchend" bindtap="bindtap" bindlongpress="bindlongpress">
+    </canvas>
+  <view  wx:if="{{isCanvasShow === 1}}">
+      <scroll-view class="zz-container-scroll-view">
+      <view hidden="{{currentTab === 1}}" class="">
+        <component_home />
+      </view>
+      <view hidden="{{currentTab === 0}}" class="">
+        <component_mine />
+      </view>
+    </scroll-view>
+    <view class="zz-container-tabbar">
+      <view class="zz-container-tabbar_item {{currentTab == idx ? 'active' : 'default' }}" data-current="{{idx}}" wx:for="{{tarbarItems}}" wx:key="key" wx:for-index="idx" wx:for-item="item"  bindtap="tabbarChange">
+        <text data-current="{{idx}}" class="{{currentTab == idx ? 'zz-container-tabbar_item--text-active' : 'zz-container-tabbar_item--text'}}" wx:for-index="idx" data-current="{{idx}}">{{item.text}}</text>
+        <image data-current="{{idx}}" class="iconPath" wx:for-index="idx"  src="{{currentTab == idx ? item.selectedIconPath : item.iconPath }}"></image>
+      </view>
     </view>
   </view>
 </view>
